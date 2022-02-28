@@ -5,6 +5,10 @@ class MainScreenBloc {
   final PersistentTabController controller =
       PersistentTabController(initialIndex: 0);
 
+  void dispose() {
+    controller.dispose();
+  }
+
   Future<void> requestLocationPermission() async {
     final status = await Permission.location.status;
     if (status.isGranted) return;

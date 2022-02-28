@@ -8,6 +8,10 @@ class GoogleMapsScreenBloc {
   late GoogleMapController controller;
   final Set<Marker> markers = {};
 
+  void dispose() {
+    controller.dispose();
+  }
+
   void initMarkers(List<Shop> shops) {
     for (final element in shops) {
       markers.add(Marker(

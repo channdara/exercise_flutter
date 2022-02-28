@@ -24,6 +24,12 @@ class _GoogleMapsScreenState extends State<GoogleMapsScreen> {
   }
 
   @override
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
